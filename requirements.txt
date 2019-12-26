@@ -1,2 +1,5 @@
 django
+djangorestframework
 requests
+bs4
+lxml
