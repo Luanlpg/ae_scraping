@@ -4,7 +4,7 @@ from .models import LogModel
 
 class ParseSerializer(serializers.ModelSerializer):
     """
-    Serializador de log.
+    Serializador de parse.
     """
     class Meta:
         model = LogModel

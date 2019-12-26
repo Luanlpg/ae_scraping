@@ -4,12 +4,18 @@ from bs4 import BeautifulSoup as bs4
 from lxml import etree
 
 class ScrapingService():
+    """=========================================================================
+    Classe de raspagem de dados.
+    ========================================================================="""
     def __init__(self, url):
         self.url = url
         self.document = requests.get(url)
         self.output = {'feed': []}
 
     def parse(self):
+        """=====================================================================
+        Método de parse de dados.
+        ====================================================================="""
         xml = etree.XML(self.document.content)
         itens = xml.iter('item')
         for item in itens:
@@ -17,6 +23,9 @@ class ScrapingService():
         return self.output
 
     def register_item(self, item):
+        """=====================================================================
+        Método que cri item em e adiciona em output.
+        ====================================================================="""
         item_dict = {
             'title': None,
             'link': None,
